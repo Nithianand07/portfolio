@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Actimat</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/projects.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script src="js/custom.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Montserrat:wght@500&family=Righteous&display=swap" rel="stylesheet">
+<script>
+
+jQuery( document ).ready(function() {
+    const choiceArray = document.querySelectorAll(".choice")
+      
+      choiceArray.forEach((card) => {
+          card.addEventListener("click", () => {
+              choiceArray.forEach((element) => {
+                  element.classList.remove("expand", "unset")
+                  element.classList.add('small')
+              })
+              card.classList.remove("small")
+              card.classList.add('expand')
+          });
+      });
+      
+    });
+
+    $( document ).ready(function() {
+
+/* For tree*/
+jQuery ('#timeline .timeline-item:odd .timeline-content').addClass('right');
+var $ = jQuery;
+$(function() {
+  var timelineBlocks = $('.timeline-item'),
+    offset = 0.8;
+  //hide timeline blocks which are outside the viewport
+  hideBlocks(timelineBlocks, offset);
+  //on scolling, show/animate timeline blocks when entering the viewport
+  $(window).on('scroll', function(){
+    (!window.requestAnimationFrame) 
+      ? setTimeout(function(){ showBlocks(timelineBlocks, offset); }, 100)
+      : window.requestAnimationFrame(function(){ showBlocks(timelineBlocks, offset); });
+  });
+  function hideBlocks(blocks, offset) {
+    blocks.each(function(){
+        ($(this).offset().top > $(window).scrollTop() + $(window).height() * offset) && $(this).find('.timeline-icon, .timeline-content').addClass('is-hidden');
+    });
+  }
+  function showBlocks(blocks, offset) {
+    blocks.each(function(){
+        ($(this).offset().top <= $(window).scrollTop() + $(window).height() * offset && $(this).find('.timeline-icon').hasClass('is-hidden')) && $(this).find('.timeline-icon, .timeline-content').removeClass('is-hidden').addClass('animate-it');
+
+    });
+  }
+});
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 100) {
+      $('.navbar-expand-lg').addClass('scrolled'); // Add a class when scrolled
+    } else {
+      $('.navbar-expand-lg').removeClass('scrolled'); // Remove the class when not scrolled
+    }
+  });
+  var elementToClick = document.querySelector('.scroll-bottom');
+
+// Scroll to the bottom when the element is clicked
+elementToClick.addEventListener('click', function() {
+window.scrollTo(0, document.body.scrollHeight);
+});
+$(function() {
+    $(window).on("scroll", function() {
+        if($(window).scrollTop() > 50) {
+            $(".sit-header").addClass("active-header");
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+           $(".sit-header").removeClass("active-header");
+        }
+    });
+});
+});
+
+
+  
+  </script>
+</head>
+<div class="container-fluid p-0">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">/<span>Portfolio</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#my-project">PROJECT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link scroll-bottom" href="#contact-us">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="social">
+  <ul>
+    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+    <li><a href="www.linkedin.com/in/nithyanandham-c-196b61258"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+  </ul>
+</div>
+</div>
+<body>
+
+  <!-- The slideshow/carousel -->
+<section id="sec-banner" style="background-image: url(images/bw-map-e450793a.jpeg), linear-gradient(rgba(31, 30, 30, 0.5),rgba(43, 42, 42, 0.5));
+background-blend-mode: overlay;">
+<div class="container banner m-auto">
+  <div class="row">
+    <div class="col-md-6 m-auto col-sm-6 animate__animated animate__slideInLeft">
+      <p>Hi There</p>
+      <h2>I'm <span class="title-color">Nithiyanandham</span></h2>
+      <H6>Full Stack Web developer</H6>
+      <div class="banner-button">
+        <button><a href="images/Resume.pdf" target="_blank">Resume</a></button>
+        <button><a href="tel:8754345847">Contact Me</a></button>
+      </div>
+    </div>
+    <div class="col-md-6 m-auto col-sm-6 animate__animated animate__slideInRight">
+      <div class="banner-img">
+       <img src="images/banner-vector.png" alt="">
+    </div>
+    </div>
+  </div>
+  <div class="scroll-downs">
+    <a href="#about"><div class="mousey">
+      <div class="scroller"></div>
+    </div></a>
+  </div>
+</div>
+</section>
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 reveal fade-left">
+        <p>INTRODUCTION</p>
+        <h2><span class="title-color">Overview</span></h2>
+        <div class="about-me">
+        <p>Having more than 4 of experience in the field of WEB DEVELOPMENT (WordPress PHP with OOP Concepts, Core PHP, Laravel
+          MVC, Build a website with HTML, Css and javascript, Advance custom fields, Plugin Development and
+          Customization and Child theme development. Working with server migration). Developed and
+          mentored different projects implemented individually and with teams. Application Analysis,
+          Design, Coding, Upgradation, Maintenance, Debugging and Support, SHOPIFY app development.</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+      <div class="row box-sec">
+        <div class="col-md-3 col-6 reveal fade-bottom">
+          <div class="box">
+              <img src="images/jquery.png" alt="">
+              <h5>Frontend Developer</h5>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 reveal fade-bottom">
+          <div class="box">
+              <img src="images/backend.png" alt="">
+              <h5>Backend Developer</h5>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 reveal fade-bottom">
+          <div class="box">
+              <img src="images/ui-ux.png" alt="">
+              <h5>UI/UX Design</h5>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 reveal fade-bottom">
+          <div class="box">
+              <img src="images/database.png" alt="">
+              <h5>Software Prototyping</h5>
+          </div>
+        </div>
+      </div>
+      </div>  
+    </div>
+  </div>
+</section>
+<section id="my-skils" style="background-image: url(images/nairobi-87db6c03.png), linear-gradient(rgba(31, 30, 30, 0.5),rgba(43, 42, 42, 0.5));
+background-blend-mode: overlay;">
+  <div class="container">
+    <p class="reveal fade-bottom">MY SKILLS</p>
+    <h2 class="reveal fade-bottom"><span class="title-color">Technologies</span></h2>
+    <div class="skil-list reveal fade-right">
+      <ul>
+        <li><div class="bg"><img src="images/icons8-html-5.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/icons8-jquery.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/CSS3_logo_and_wordmark.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/icons8-github.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/icons8-javascript.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/wordpress.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/php.svg" alt=""></div></li>
+        <li><div class="bg"><img src="images/react.gif" alt=""></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="my-project">
+    <div class="container py-5">
+      <div class="row reveal fade-left">
+    <p>CASE STUDIES</p>
+    <h2><span class="title-color">Projects</span></h2>
+    <p class="proj-desc">These projects demonstrate my expertise with practical examples of some of my work, including brief descriptions and links to code repositories and live demos. They showcase my ability to tackle intricate challenges, adapt to various technologies, and efficiently oversee projects.</p>
+    <div class="container horizontal-accordion">
+      <div class="card choice mx-2 unset" style="background:url('images/recircle.png'),  linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%));
+      background-blend-mode: overlay;">
+        <h4>RECIRCLE</h4>
+        <div class="card-body">
+          <h5 class="card-title">RECIRCLE</h5>
+          <p class="card-text">India, ranked #2 globally in Plastic Waste Production.</p>
+          <a href="https://recircle.in/" target="_blank"><i class="fa fa-external-link"></i></i>Live</a>
+        </div>
+      </div>
+    
+      <div class="card choice expand mx-2"  style="background:url('images/Rework.png'),  linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%));
+      background-blend-mode: overlay;">
+        <h4>REWORK THE BAY</h4>
+        <div class="card-body">
+          <h5 class="card-title">REWORK THE BAY</h5>
+          <p class="card-text">Rich with culture and diversity, the Bay Area is a hub of innovation.</p>
+          <a href="https://reworkthebay.org/" target="_blank"><i class="fa fa-external-link"></i></i>Live</a>
+        </div>
+      </div>
+    
+      <div class="card choice unset mx-2"  style="background:url('images/black.png'),  linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%));
+      background-blend-mode: overlay;">
+        <h4>BLACK ACES</h4>
+        <div class="card-body">
+          <h5 class="card-title">BLACK ACES</h5>
+          <p class="card-text">To Buying and Selling the Armor and guns shop.</p>
+          <a href="" target="_blank"><i class="fa fa-external-link"></i></i>Live</a>
+        </div>
+      </div>
+    
+      <div class="card choice unset mx-2"  style="background:url('images/motus.png'),  linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%));
+      background-blend-mode: overlay;">
+        <h4>MOTUS CASTERS</h4>
+        <div class="card-body">
+          <h5 class="card-title">MOTUS CASTERS</h5>
+          <p class="card-text">Our Experienced Staff Is Available To Provide Custom Solutions To Match Whatever Your Needs May Be.</p>
+          <a href="" target="_blank"><i class="fa fa-external-link"></i></i>Live</a>
+        </div>
+      </div>
+    
+      <div class="card choice unset mx-2" style="background:url('images/cgr.png'),  linear-gradient(rgb(0 0 0 / 80%),rgb(0 0 0 / 80%));
+      background-blend-mode: overlay;">
+        <h4>CGR CREATIVES</h4>
+        <div class="card-body">
+          <h5 class="card-title">CGR CREATIVES</h5>
+          <p class="card-text">CGR Creative is a digital-to-dollars marketing agency specializing in the creation</p>
+          <a href="" target="_blank"><i class="fa fa-external-link"></i></i>Live</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+<section id="time-line">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="reveal fade-bottom">WHAT I'VE DONE SO FAR</p>
+        <h2 class="reveal fade-bottom"><span class="title-color">Work Experience.</span></h2>
+        <div class="timeline-container">
+          <div id="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon is-hidden">
+                  <img decoding="async" class="fa" src="images/icons8-javascript.svg" alt="">
+              </div>
+              <div class="timeline-content is-hidden">
+                  <h2>Angula JS Developer</h2>
+                  <p>Sanjeevi Technology Solutions</p>
+              </div>
+              <div class="timeline-content time-dur right is-hidden perios">
+                <h3>Jan 2018 - June 2018</h3>
+            </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon is-hidden">
+                  <img decoding="async" class="fa" src="images/wordpress.svg" alt="">
+              </div>
+              <div class="timeline-content right is-hidden">
+                  <h2>Wordpress Web Development</h2>
+                  <p>Graphikpro Technologies</p>
+              </div>
+              <div class="timeline-content time-dur left is-hidden perios">
+                <h3>Nov 2018 - Mar 2021</h3>
+            </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon is-hidden">
+                  <img decoding="async" class="fa" src="images/php.svg" alt="">
+              </div>
+              <div class="timeline-content is-hidden">
+                  <h2>Senior Web Development</h2>
+                  <p>Zaigo Infotech</p>
+              </div>
+              <div class="timeline-content right time-dur is-hidden perios">
+                <h3>Apr 2021 - Still</h3>
+            </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-icon is-hidden">
+                  <img decoding="async" class="fa" src="images/react.gif" alt="">
+              </div>
+              <div class="timeline-content right is-hidden resume">
+                <form method="get" action="images/Resume.pdf">
+                  <button type="submit">My Resume <img src="images/download.gif" alt=""></button>
+               </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="#contact-us">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 reveal fade-left">
+          <p>- LET'S CONNECT</p>
+          <h2>Get in touch</h2>
+          <p>I'm currently avaliable to take on new projects, so feel free to send me a message about anything that you want to run past me. You can contact anytime at 24/7</p>
+          <ul class="con-list">
+            <li><i class="fa fa-phone"></i><a href="tel:8754345847">8754345847</a></li>
+            <li><i class="fa fa-envelope"></i><a href="mailto:nithiyaanandham7@gmail.com">nithiyaanandham7@gmail.com</a></li>
+            <li><i class="fa fa-map-marker"></i>Pondicherry</li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-sm-6 reveal fade-right">
+          <div class="contact-img">
+          <img src="images/contact-person.png" alt="">
+        </div>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="copy-right">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+        <p>© Copyright 2023 – All Rights Reserved</p>
+    </div>
+  </div>
+</div>
+</section>
+</body>
+</html>
