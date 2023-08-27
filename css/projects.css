@@ -893,9 +893,8 @@ a.choisissez-button {
     border-right: 7px solid #000;
   }
   .card {
-    box-shadow: rgb(0 0 0 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(255 255 255 / 35%) 0px -2px 6px 0px inset;
+    box-shadow: rgb(255 255 255 / 16%) 0px 3px 6px, rgb(255 255 255 / 23%) 0px 3px 6px;
 }
-  
   
   
   /* Animation CSS */
